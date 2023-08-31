@@ -18,7 +18,7 @@ SELECT
       -- WHEN usage.pricing_unit = 'gibibyte month' THEN ROUND(SUM(usage.amount_in_pricing_units) * 30, 2)
       ELSE  gcp_billing_export.usage.amount_in_pricing_units
     END), 0) AS gcp_billing_export_usage__amount_in_calculated_units
-FROM `sidney-stefani.looker_scratch.LR_CMQSD1681753303785_gcp_billing_export` AS gcp_billing_export
+FROM `ENTER ALIAS HERE` AS gcp_billing_export
 WHERE (gcp_billing_export.service.description ) = 'Compute Engine' AND (CASE
       -- VCPU RAM
         WHEN gcp_billing_export.usage.pricing_unit = 'gibibyte hour' THEN 'GB'
