@@ -7,7 +7,7 @@ SELECT
         ELSE gcp_billing_export.adjustment_info.mode
     END  AS gcp_billing_export_adjustment_info__mode,
     gcp_billing_export.adjustment_info.id  AS gcp_billing_export_adjustment_info__id
-FROM `sidney-stefani.looker_scratch.LR_CMQSD1681753303785_gcp_billing_export` AS gcp_billing_export
+FROM `ENTER ALIAS HERE` AS gcp_billing_export
 WHERE (CASE
         WHEN gcp_billing_export.adjustment_info.type = 'USAGE_CORRECTION' THEN 'Usage Correction'
         WHEN gcp_billing_export.adjustment_info.type = 'GENERAL_ADJUSTMENT' THEN 'General Adjustment'
