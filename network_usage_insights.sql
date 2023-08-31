@@ -11,8 +11,8 @@ SELECT
       -- WHEN usage.pricing_unit = 'gibibyte month' THEN ROUND(SUM(usage.amount_in_pricing_units) * 30, 2)
       ELSE  gcp_billing_export.usage.amount_in_pricing_units
     END), 0) AS gcp_billing_export_usage__amount_in_calculated_units
-FROM `sidney-stefani.looker_scratch.LR_CMQSD1681753303785_gcp_billing_export` AS gcp_billing_export
-LEFT JOIN `sidney-stefani.looker_scratch.LR_CM1J01686322129852_pricing` AS pricing ON pricing.sku__id = gcp_billing_export.sku.id
+FROM `ENTER BILLING ALIAS` AS gcp_billing_export
+LEFT JOIN `ENTER PRICING ALIAS` AS pricing ON pricing.sku__id = gcp_billing_export.sku.id
 WHERE (gcp_billing_export.service.description ) = 'Compute Engine' AND ((( gcp_billing_export.usage_start_date
      ) >= ((DATE_ADD(DATE_TRUNC(CURRENT_DATE('America/Los_Angeles'), MONTH), INTERVAL -12 MONTH))) AND ( gcp_billing_export.usage_start_date
      ) < ((DATE_ADD(DATE_ADD(DATE_TRUNC(CURRENT_DATE('America/Los_Angeles'), MONTH), INTERVAL -12 MONTH), INTERVAL 12 MONTH))))) AND ((pricing.pricing_type) LIKE 'Egress%' OR (pricing.pricing_type) LIKE 'Ingress%') AND (pricing.pricing_category) = 'Network'
@@ -33,8 +33,8 @@ SELECT
       -- WHEN usage.pricing_unit = 'gibibyte month' THEN ROUND(SUM(usage.amount_in_pricing_units) * 30, 2)
       ELSE  gcp_billing_export.usage.amount_in_pricing_units
     END), 0) AS gcp_billing_export_usage__amount_in_calculated_units
-FROM `sidney-stefani.looker_scratch.LR_CMQSD1681753303785_gcp_billing_export` AS gcp_billing_export
-LEFT JOIN `sidney-stefani.looker_scratch.LR_CM1J01686322129852_pricing` AS pricing ON pricing.sku__id = gcp_billing_export.sku.id
+FROM `ENTER BILLING ALIAS` AS gcp_billing_export
+LEFT JOIN `ENTER PRICING ALIAS` AS pricing ON pricing.sku__id = gcp_billing_export.sku.id
 WHERE (gcp_billing_export.service.description ) = 'Compute Engine' AND ((( gcp_billing_export.usage_start_date
      ) >= ((DATE_ADD(DATE_TRUNC(CURRENT_DATE('America/Los_Angeles'), MONTH), INTERVAL -12 MONTH))) AND ( gcp_billing_export.usage_start_date
      ) < ((DATE_ADD(DATE_ADD(DATE_TRUNC(CURRENT_DATE('America/Los_Angeles'), MONTH), INTERVAL -12 MONTH), INTERVAL 12 MONTH))))) AND ((pricing.pricing_type) LIKE 'Egress%' OR (pricing.pricing_type) LIKE 'Ingress%') AND (pricing.pricing_category) = 'Network'
